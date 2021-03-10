@@ -19,11 +19,11 @@ jobs:
           npm install
           npm run build
       - uses: actions/upload-artifact@main
-    needs: build
           name: webpack artifacts
           path: public/
 
   test:
+    needs: build
     runs-on: ubuntu-latest
     strategy:
       matrix:
